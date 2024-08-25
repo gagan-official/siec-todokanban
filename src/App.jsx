@@ -45,7 +45,7 @@ function App() {
   }, [todos]);
 
   return (
-    <section className="rounded-xl bg-white p-3 pb-8">
+    <section className="rounded-xl bg-white p-3 pb-8 m-[10px]">
       <h1 className="text-lg font-semibold text-center mb-4 uppercase">
         Todos Kanban
       </h1>
