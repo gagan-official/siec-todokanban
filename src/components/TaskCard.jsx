@@ -14,28 +14,25 @@ export default function TaskCard({ task, resolved, index }) {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          // isDragging={snap.isDragging}
+          style={{
+            "--bg": `rgba(var(--${color}Text),.07)`,
+            backdropFilter: snap.isDragging ? "blur(10px)" : "",
+            ...provided.draggableProps.style,
+          }}
+          className={`taskCard flex flex-col gap-1 rounded-md bg-[--bg] p-3 text-xs transition-colors`}
         >
-          <div
-            style={{
-              "--bg": `rgba(var(--${color}Text),.07)`,
-              backdropFilter: snap.isDragging ? "blur(10px)" : "",
-            }}
-            className={`taskCard flex flex-col gap-1 rounded-md bg-[--bg] p-3 text-xs transition-colors`}
+          <a
+            style={{ "--text": `rgb(var(--${color}Text))` }}
+            className={`font-semibold text-sm w-fit hover:opacity-60 text-[--text]`}
+            href="https://siec-dashboard.netlify.app"
+            target="blank"
           >
-            <a
-              style={{ "--text": `rgb(var(--${color}Text))` }}
-              className={`font-semibold text-sm w-fit hover:opacity-60 text-[--text]`}
-              href="https://siec-dashboard.netlify.app"
-              target="blank"
-            >
-              {title} <LuExternalLink {...iconProps} />
-            </a>
-            <span className="flex gap-1 items-center font-medium text-gray-500">
-              <FaRegCalendarAlt />
-              {date}
-            </span>
-          </div>
+            {title} <LuExternalLink {...iconProps} />
+          </a>
+          <span className="flex gap-1 items-center font-medium text-gray-500">
+            <FaRegCalendarAlt />
+            {date}
+          </span>
           {provided.placeholder}
         </li>
       )}
