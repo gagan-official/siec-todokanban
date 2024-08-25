@@ -21,7 +21,7 @@ export default function TaskCard({ task, resolved, index }) {
               "--bg": `rgba(var(--${color}Text),.07)`,
               backdropFilter: snap.isDragging ? "blur(10px)" : "",
             }}
-            className={`taskCard flex flex-col gap-1 rounded-md bg-[--bg] p-3 text-xs`}
+            className={`taskCard flex flex-col gap-1 rounded-md bg-[--bg] p-3 text-xs transition-colors`}
           >
             <a
               style={{ "--text": `rgb(var(--${color}Text))` }}

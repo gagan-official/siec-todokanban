@@ -25,8 +25,8 @@ const data = [
   {
     id: "col1",
     column: "to do",
-    // tasks: tasks.filter((_,i)=>i<2),
-    tasks: [tasks[0],tasks[1]],
+    tasks: tasks.filter((_, i) => i < 2),
+    // tasks: [tasks[0],tasks[1]],
   },
   {
     id: "col2",
