@@ -49,7 +49,7 @@ function App() {
       <h1 className="text-lg font-semibold text-center mb-4 uppercase">
         Todos Kanban
       </h1>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <DragDropContext onDragEnd={handleDragEnd}>
           {todos.map(({ id, column, tasks }) => (
             <Column key={id} id={id} heading={column} tasks={tasks}></Column>
